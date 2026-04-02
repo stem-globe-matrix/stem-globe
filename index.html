@@ -1,0 +1,650 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEM Globe</title>
+
+<style>
+:root {
+  --c1: #00f2fe;
+  --c2: #4facfe;
+  --c3: #43e97b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #05070a;
+  overflow-x: hidden;
+}
+
+/* ===== FLOW BACKGROUND ===== */
+.flow-bg {
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, var(--c1), var(--c2), var(--c3));
+  animation: flow 18s ease-in-out infinite;
+  z-index: -1;
+  filter: blur(120px);
+  opacity: 0.35;
+  transition: background 3s ease-in-out;
+}
+
+@keyframes flow {
+  0% { transform: translate(0,0) scale(1) }
+  50% { transform: translate(-20%, -20%) scale(1.1) }
+  100% { transform: translate(0,0) scale(1) }
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(18px);
+  background: rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  z-index: 1000;
+}
+
+.logo {
+  color: white;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  position: relative;
+  transition: all 0.35s ease;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(45deg, var(--c1), var(--c2));
+  opacity: 0;
+  filter: blur(10px);
+  transition: opacity 0.4s ease;
+}
+
+.nav-links a:hover::before {
+  opacity: 1;
+}
+
+.nav-links a:hover {
+  color: #000;
+  background: linear-gradient(45deg, var(--c1), var(--c2));
+}
+
+.btn {
+  padding: 8px 20px;
+  border-radius: 30px;
+  background: linear-gradient(45deg, var(--c2), var(--c3));
+  color: #000;
+  font-weight: 600;
+}
+
+/* MOBILE */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: white;
+  margin: 4px;
+}
+
+@media(max-width:768px){
+  .nav-links {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    height: 100vh;
+    width: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.95);
+    transition: 0.5s;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* ===== HOME ===== */
+.home {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.home-content {
+  max-width: 850px;
+  color: white;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.home h1 {
+  font-size: 52px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, var(--c1), var(--c2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home p {
+  font-size: 18px;
+  opacity: 0.85;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  padding: 12px 30px;
+  border-radius: 30px;
+  background: linear-gradient(45deg, var(--c1), var(--c2));
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@keyframes fadeUp {
+  from {opacity:0; transform:translateY(40px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+/* ===== ABOUT ===== */
+.about {
+  padding: 120px 60px;
+  color: white;
+}
+
+.about-container {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, var(--c1), var(--c2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  opacity: 0.85;
+}
+
+.founders {
+  flex: 1;
+  display: grid;
+  gap: 20px;
+}
+
+.founder-card {
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(14px);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.3s;
+}
+
+.founder-card:hover {
+  transform: translateY(-8px);
+}
+
+.about-vision {
+  margin-top: 60px;
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CONTACT ICON LINKS */
+.contact-link {
+  color: #00f2fe;
+  text-decoration: none;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.4s ease;
+}
+
+/* ICON STYLE */
+.contact-link i {
+  font-size: 18px;
+  transition: all 0.4s ease;
+}
+
+/* HOVER EFFECT */
+.contact-link:hover {
+  color: white;
+  transform: translateY(-2px);
+}
+
+.contact-link:hover i {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 0 8px rgba(0,255,255,0.7));
+}
+
+/* SUBTLE PULSE ANIMATION */
+@keyframes pulseGlow {
+  0% { filter: drop-shadow(0 0 0 rgba(0,255,255,0)); }
+  50% { filter: drop-shadow(0 0 10px rgba(0,255,255,0.6)); }
+  100% { filter: drop-shadow(0 0 0 rgba(0,255,255,0)); }
+}
+
+.contact-link i {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .home h1 {font-size:34px;}
+  .about {padding:80px 20px;}
+}
+</style>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<body>
+
+<div class="flow-bg"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">
+  <img src="logo.png" alt="STEM Globe Logo">
+  STEM Globe
+</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section class="home" id="home">
+  <div class="home-content">
+    <h1>Engineering the Future of Technology & Science</h1>
+    <p>
+      STEM Globe is a next-generation innovation ecosystem where advanced technology,
+      scientific research, and intelligent systems converge to shape global progress.
+    </p>
+    <a href="#projects" class="cta-btn">Explore More</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-container">
+
+    <div class="about-text">
+      <h2>About STEM Globe</h2>
+      <p>
+        Founded on May 01, 2025, STEM Globe is an emerging innovation ecosystem 
+        built at the convergence of science and technology.
+      </p>
+      <p>
+        We are young innovators who believe we can change the world by building
+        the tech community and innovation ecosystem the future needs.
+      </p>
+    </div>
+
+    <div class="founders">
+      <div class="founder-card">
+        <h3>Naren Hullatti</h3>
+        <p>Founder & CEO</p>
+      </div>
+      <div class="founder-card">
+        <h3>Rishith M Naik</h3>
+        <p>Co-founder & CTO</p>
+      </div>
+      <div class="founder-card">
+        <h3>Neesa Divekar</h3>
+        <p>Co-founder & COO</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="about-vision">
+    <p>
+      We are students, innovators, and believers — proving that age is not a limitation,
+      but a catalyst for change.
+    </p>
+  </div>
+</section>
+
+<!-- ===== PROJECTS SECTION ===== -->
+<section class="projects" id="projects">
+
+  <h2 class="section-title">Innovations & Projects</h2>
+
+  <!-- ===== FEATURED PROJECT ===== -->
+  <div class="featured-project" onclick="openModal('inferno')">
+    <h3>Inferno Sight</h3>
+    <p>
+      AI-powered fire detection and response system using satellite vision, 
+      real-time alerts, and autonomous drone deployment. Designed to detect, 
+      respond, and soon predict fire hazards globally.
+    </p>
+    <span>Explore System →</span>
+  </div>
+
+  <!-- ===== PROJECT GRID ===== -->
+  <div class="project-grid">
+
+    <div class="project-card" onclick="openModal('neuro')">
+      <h4>Neuro Lift</h4>
+      <p>AI-optimized EMG prosthetic arm for paralysis patients.</p>
+    </div>
+
+    <div class="project-card" onclick="openModal('plant')">
+      <h4>Indoor Plant Monitoring</h4>
+      <p>AI-based smart plant ecosystem with sensor-driven growth analytics.</p>
+    </div>
+
+    <div class="project-card" onclick="openModal('fraud')">
+      <h4>Agis Fraud</h4>
+      <p>Advanced AI system to detect and prevent financial fraud.</p>
+    </div>
+
+    <div class="project-card" onclick="openModal('aris')">
+      <h4>ARIS</h4>
+      <p>Analyzing & Reasoning Intelligent System with adaptive intelligence.</p>
+    </div>
+
+    <div class="project-card" onclick="openModal('nexus')">
+      <h4>Nexus Spine City</h4>
+      <p>A futuristic smart-city infrastructure driven by intelligent systems.</p>
+    </div>
+
+    <!-- EXTRA PROJECTS -->
+    <div class="project-card" onclick="openModal('quantum')">
+      <h4>Quantum Grid AI</h4>
+      <p>Next-gen distributed AI computation framework.</p>
+    </div>
+
+    <div class="project-card" onclick="openModal('aero')">
+      <h4>AeroLink Systems</h4>
+      <p>Autonomous aerial logistics and delivery optimization network.</p>
+    </div>
+
+    <div class="project-card" onclick="openModal('bio')">
+      <h4>BioSync Neural Net</h4>
+      <p>Human-AI biological signal synchronization research system.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact" class="projects">
+  <h2 class="section-title">Contact</h2>
+
+  <div class="featured-project" style="max-width:600px;">
+    
+   <p>
+  <a href="mailto:stemglobe.official@gmail.com" class="contact-link">
+    <i class="fas fa-envelope"></i> stemglobe.official@gmail.com
+  </a>
+</p>
+
+<br>
+
+<p>
+  <a href="https://instagram.com/stemglobe.official" target="_blank" class="contact-link">
+    <i class="fab fa-instagram"></i> @stemglobe.official
+  </a>
+</p>
+  </div>
+</section>
+
+<!-- ===== MODAL ===== -->
+<div class="modal" id="modal">
+  <div class="modal-content" id="modalContent">
+    <span class="close" onclick="closeModal()">×</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalText"></p>
+  </div>
+</div>
+
+<style>
+/*====logo====*/
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.logo img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+/* ===== PROJECTS ===== */
+.projects {
+  padding: 120px 60px;
+  color: white;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 60px;
+  background: linear-gradient(90deg, var(--c1), var(--c2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* FEATURED */
+.featured-project {
+  margin: auto;
+  max-width: 900px;
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  cursor: pointer;
+  backdrop-filter: blur(16px);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.4s;
+}
+
+.featured-project:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 40px rgba(0,255,255,0.2);
+}
+
+.featured-project h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.featured-project span {
+  display: inline-block;
+  margin-top: 15px;
+  opacity: 0.8;
+}
+
+/* GRID */
+.project-grid {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+}
+
+.project-card {
+  padding: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 25px rgba(0,255,255,0.15);
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: rgba(20,20,20,0.9);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 600px;
+  color: white;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+  font-size: 22px;
+}
+</style>
+
+<script>
+const data = {
+  inferno: "Inferno Sight is an AI-driven fire detection system using satellite imagery, real-time alerts, GPS tracking, and autonomous drone deployment. Future expansion includes predictive fire intelligence. Featured by E-Cell IIT-B, INSEED France and regional leaders. Visionary: Naren Hullatti.",
+  
+  neuro: "Neuro Lift is an affordable AI-powered EMG prosthetic arm designed for paralysis patients. Recognized by Atal Innovation Mission and Inspire Awards. Visionary: Naren Hullatti.",
+
+  plant: "Indoor Plant Monitoring System uses sensors and AI to track plant growth, moisture, and sunlight conditions for optimized plant health. Visionary: Diganth D.K.",
+
+  fraud: "Agis Fraud is a high-intelligence AI fraud detection system integrated with ARIS to prevent financial threats. Featured by IIT Bombay and financial institutions. Visionary: Rishith M Naik.",
+
+  aris: "ARIS is an advanced AI reasoning system capable of analyzing, learning, and evolving continuously with high accuracy. Visionary: Naren Hullatti.",
+
+  nexus: "Nexus Spine City is a futuristic smart city infrastructure integrating AI, automation, and sustainable urban intelligence. Visionary: Naren Hullatti.",
+
+  quantum: "Quantum Grid AI is a distributed AI computation network designed for ultra-fast decentralized processing. Visionary: Naren Hullatti.",
+
+  aero: "AeroLink Systems focuses on autonomous aerial logistics, enabling efficient drone-based delivery ecosystems. Visionary: Rishith M Naik.",
+
+  bio: "BioSync Neural Net explores human-AI biological signal integration for next-gen adaptive systems. Visionary: Neesa Divekar."
+};
+
+function openModal(key){
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("modalTitle").innerText = key.toUpperCase();
+  document.getElementById("modalText").innerText = data[key];
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
+
+
+<script>
+
+// MOBILE
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+// SMOOTH COLORS
+const root = document.documentElement;
+const palettes = [
+  ["#00f2fe","#4facfe","#43e97b"],
+  ["#00c6ff","#0072ff","#00ff87"],
+  ["#36d1dc","#5b86e5","#2af598"]
+];
+
+let index = 0;
+setInterval(() => {
+  index = (index + 1) % palettes.length;
+  root.style.setProperty('--c1', palettes[index][0]);
+  root.style.setProperty('--c2', palettes[index][1]);
+  root.style.setProperty('--c3', palettes[index][2]);
+}, 6000);
+</script>
+
+<footer style="text-align:center; padding:20px; color:white; opacity:0.7;">
+  © STEM Globe 2026. All Rights Reserved.
+</footer>
+
+</body>
+</html>
+
