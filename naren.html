@@ -1,0 +1,3882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Naren Hullatti — Founder Portfolio</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+
+<style>
+
+/* ========================= */
+/* GLOBAL */
+/* ========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#fff;
+  color:#111;
+  overflow-x:hidden;
+  line-height:1.7;
+}
+
+/* ========================= */
+/* CUSTOM SCROLLBAR */
+/* ========================= */
+
+::-webkit-scrollbar{
+  width:10px;
+}
+
+::-webkit-scrollbar-track{
+  background:#f5f5f5;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#111;
+  border-radius:999px;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+header{
+
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:100%;
+
+  padding:18px 42px;
+
+  display:flex;
+
+  justify-content:space-between;
+  align-items:center;
+
+  background:
+    rgba(255,255,255,0.78);
+
+  backdrop-filter:blur(16px);
+
+  border-bottom:1px solid #eee;
+
+  z-index:1000;
+}
+
+.logo{
+
+  font-size:18px;
+
+  font-weight:700;
+
+  letter-spacing:1px;
+}
+
+nav{
+
+  display:flex;
+
+  gap:26px;
+}
+
+nav a{
+
+  text-decoration:none;
+
+  color:#111;
+
+  font-size:14px;
+
+  transition:0.3s ease;
+}
+
+nav a:hover{
+  opacity:0.6;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero{
+
+  min-height:100vh;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:
+    150px 40px
+    100px;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+/* Abstract BG */
+
+.hero::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:600px;
+  height:600px;
+
+  top:-260px;
+  right:-220px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0,0,0,0.06),
+      transparent 70%
+    );
+}
+
+.hero::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:450px;
+  height:450px;
+
+  bottom:-180px;
+  left:-120px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0,0,0,0.05),
+      transparent 70%
+    );
+}
+
+.hero-grid{
+
+  max-width:1300px;
+
+  width:100%;
+
+  display:grid;
+
+  grid-template-columns:
+    1.1fr 0.9fr;
+
+  gap:80px;
+
+  align-items:center;
+
+  position:relative;
+
+  z-index:2;
+}
+
+.hero-text h1{
+
+  font-size:92px;
+
+  line-height:0.92;
+
+  letter-spacing:-5px;
+
+  font-weight:600;
+
+  margin-bottom:28px;
+}
+
+.hero-text p{
+
+  max-width:680px;
+
+  color:#555;
+
+  font-size:18px;
+
+  line-height:2;
+}
+
+.hero-buttons{
+
+  margin-top:40px;
+
+  display:flex;
+
+  gap:16px;
+
+  flex-wrap:wrap;
+}
+
+.hero-buttons a{
+
+  padding:14px 26px;
+
+  border-radius:999px;
+
+  text-decoration:none;
+
+  font-size:14px;
+
+  transition:0.35s ease;
+}
+
+.primary-btn{
+
+  background:#111;
+  color:#fff;
+}
+
+.primary-btn:hover{
+
+  transform:translateY(-4px);
+
+  box-shadow:
+    0 15px 30px rgba(0,0,0,0.1);
+}
+
+.secondary-btn{
+
+  border:1px solid #111;
+  color:#111;
+}
+
+.secondary-btn:hover{
+
+  background:#111;
+  color:#fff;
+}
+
+/* ========================= */
+/* IMAGE */
+/* ========================= */
+
+.hero-image{
+  perspective:1200px;
+}
+
+.image-card{
+
+  position:relative;
+
+  border-radius:42px;
+
+  overflow:hidden;
+
+  transition:0.5s ease;
+
+  transform-style:preserve-3d;
+}
+
+.image-card:hover{
+
+  transform:
+    rotateY(-8deg)
+    rotateX(5deg);
+}
+
+.image-card img{
+
+  width:100%;
+
+  display:block;
+}
+
+.quote-back{
+
+  position:absolute;
+
+  inset:0;
+
+  background:#111;
+
+  color:#fff;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  padding:40px;
+
+  opacity:0;
+
+  transition:0.4s ease;
+
+  font-size:34px;
+
+  line-height:1.4;
+}
+
+.image-card:hover .quote-back{
+  opacity:1;
+}
+
+/* ========================= */
+/* SECTIONS */
+/* ========================= */
+
+.section{
+
+  max-width:1200px;
+
+  margin:auto;
+
+  padding:120px 24px;
+}
+
+.section-heading{
+
+  text-align:center;
+
+  max-width:850px;
+
+  margin:auto auto 70px;
+}
+
+.mini-tag{
+
+  display:inline-block;
+
+  padding:8px 16px;
+
+  border-radius:999px;
+
+  background:#111;
+
+  color:#fff;
+
+  font-size:12px;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+
+  margin-bottom:18px;
+}
+
+.section-heading h2{
+
+  font-size:58px;
+
+  line-height:1.05;
+
+  letter-spacing:-2px;
+
+  margin-bottom:18px;
+}
+
+.section-heading p{
+
+  color:#555;
+
+  line-height:1.9;
+}
+
+/* ========================= */
+/* CORE IDENTITY */
+/* ========================= */
+
+.identity-card{
+
+  border:1px solid #eee;
+
+  border-radius:40px;
+
+  padding:70px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f8f8f8
+    );
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.identity-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:420px;
+  height:420px;
+
+  top:-180px;
+  right:-160px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0,0,0,0.05),
+      transparent 70%
+    );
+}
+
+.identity-card p{
+
+  position:relative;
+
+  z-index:2;
+
+  color:#444;
+
+  line-height:2;
+}
+
+/* ========================= */
+/* METRICS */
+/* ========================= */
+
+.metrics{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+  gap:20px;
+
+  margin-top:50px;
+}
+
+.metric{
+
+  border:1px solid #eee;
+
+  border-radius:28px;
+
+  padding:36px;
+
+  transition:0.35s ease;
+}
+
+.metric:hover{
+
+  transform:translateY(-8px);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.05);
+}
+
+.metric h3{
+
+  font-size:54px;
+
+  letter-spacing:-2px;
+
+  margin-bottom:10px;
+}
+
+.metric p{
+  color:#555;
+}
+
+/* ========================= */
+/* ECOSYSTEM */
+/* ========================= */
+
+.ecosystem{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+  gap:24px;
+}
+
+.eco-card{
+
+  border:1px solid #eee;
+
+  border-radius:32px;
+
+  padding:36px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff,
+      #fafafa
+    );
+
+  cursor:pointer;
+
+  transition:0.35s ease;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.eco-card:hover{
+
+  transform:translateY(-8px);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.06);
+}
+
+.eco-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:180px;
+  height:180px;
+
+  top:-70px;
+  right:-70px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0,0,0,0.04),
+      transparent 70%
+    );
+}
+
+.eco-card h3{
+
+  font-size:28px;
+
+  margin-bottom:14px;
+
+  letter-spacing:-1px;
+}
+
+.eco-card p{
+
+  color:#555;
+
+  line-height:1.9;
+}
+
+/* ========================= */
+/* LEADERSHIP SECTION */
+/* ========================= */
+
+.leadership{
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:40px;
+
+  padding:80px 70px;
+
+  background:#111;
+
+  color:#fff;
+}
+
+.leadership::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:520px;
+  height:520px;
+
+  top:-220px;
+  right:-220px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.08),
+      transparent 70%
+    );
+}
+
+.leadership-content{
+
+  position:relative;
+
+  z-index:2;
+}
+
+.leadership-badge{
+
+  display:inline-block;
+
+  padding:8px 16px;
+
+  border-radius:999px;
+
+  background:
+    rgba(255,255,255,0.12);
+
+  font-size:12px;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+
+  margin-bottom:24px;
+}
+
+.leadership h2{
+
+  font-size:60px;
+
+  line-height:1.05;
+
+  letter-spacing:-2px;
+
+  margin-bottom:24px;
+
+  max-width:900px;
+}
+
+.leadership p{
+
+  max-width:900px;
+
+  color:
+    rgba(255,255,255,0.76);
+
+  line-height:2;
+}
+
+/* ========================= */
+/* GALLERY */
+/* ========================= */
+
+.gallery{
+
+  display:flex;
+
+  gap:20px;
+
+  overflow-x:auto;
+
+  scrollbar-width:none;
+}
+
+.gallery::-webkit-scrollbar{
+  display:none;
+}
+
+.gallery img{
+
+  height:420px;
+
+  width:auto;
+
+  border-radius:30px;
+
+  object-fit:cover;
+
+  border:1px solid #eee;
+
+  transition:0.4s ease;
+}
+
+.gallery img:hover{
+
+  transform:scale(1.03);
+}
+
+/* ========================= */
+/* WALL OF FAME */
+/* ========================= */
+
+.fame-timeline{
+
+  position:relative;
+
+  max-width:1000px;
+
+  margin:auto;
+
+  padding-left:40px;
+
+  border-left:1px solid #ddd;
+}
+
+.fame-item{
+
+  position:relative;
+
+  margin-bottom:45px;
+}
+
+.fame-item::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:-48px;
+  top:12px;
+
+  width:14px;
+  height:14px;
+
+  border-radius:50%;
+
+  background:#111;
+}
+
+.fame-year{
+
+  font-size:13px;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+
+  color:#888;
+
+  margin-bottom:14px;
+}
+
+.fame-card{
+
+  border:1px solid #eee;
+
+  border-radius:32px;
+
+  padding:34px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff,
+      #fafafa
+    );
+
+  transition:0.35s ease;
+}
+
+.fame-card:hover{
+
+  transform:translateY(-6px);
+
+  box-shadow:
+    0 24px 50px rgba(0,0,0,0.06);
+}
+
+.fame-card h3{
+
+  font-size:28px;
+
+  margin-bottom:14px;
+
+  letter-spacing:-1px;
+}
+
+.fame-card p{
+
+  color:#555;
+
+  line-height:1.9;
+}
+
+.fame-fact{
+
+  margin-top:20px;
+
+  padding:18px 20px;
+
+  border-radius:20px;
+
+  background:#111;
+
+  color:#fff;
+
+  font-size:14px;
+
+  line-height:1.8;
+}
+
+/* ========================= */
+/* VISION */
+/* ========================= */
+
+.vision{
+
+  border-radius:42px;
+
+  padding:90px 70px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #111,
+      #1e1e1e
+    );
+
+  color:#fff;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.vision::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:600px;
+  height:600px;
+
+  top:-260px;
+  right:-260px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.06),
+      transparent 70%
+    );
+}
+
+.vision h2{
+
+  position:relative;
+
+  z-index:2;
+
+  font-size:62px;
+
+  line-height:1.08;
+
+  letter-spacing:-2px;
+
+  margin-bottom:28px;
+
+  max-width:900px;
+}
+
+.vision p{
+
+  position:relative;
+
+  z-index:2;
+
+  max-width:900px;
+
+  color:
+    rgba(255,255,255,0.76);
+
+  line-height:2;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer{
+
+  border-top:1px solid #eee;
+
+  padding:80px 24px;
+}
+
+.footer-grid{
+
+  max-width:1200px;
+
+  margin:auto;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:40px;
+
+  flex-wrap:wrap;
+}
+
+.footer-grid h2{
+
+  font-size:34px;
+
+  margin-bottom:10px;
+}
+
+.footer-grid p{
+  color:#666;
+}
+
+.socials{
+
+  display:flex;
+
+  gap:14px;
+
+  margin-top:22px;
+}
+
+.socials a{
+
+  width:48px;
+  height:48px;
+
+  border-radius:50%;
+
+  border:1px solid #ddd;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  transition:0.35s ease;
+}
+
+.socials a:hover{
+
+  background:#111;
+
+  transform:translateY(-4px);
+}
+
+.socials img{
+
+  width:18px;
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media(max-width:900px){
+
+  header{
+    padding:18px 20px;
+  }
+
+  nav{
+    display:none;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-text h1{
+    font-size:62px;
+  }
+
+  .section-heading h2{
+    font-size:40px;
+  }
+
+  .leadership h2,
+  .vision h2{
+    font-size:40px;
+  }
+
+  .identity-card,
+  .leadership,
+  .vision{
+    padding:42px 28px;
+  }
+
+  .gallery img{
+    height:320px;
+  }
+
+}
+
+
+
+
+/* ======================================== */
+/* LARGE TABLETS */
+/* ======================================== */
+
+@media (max-width: 1200px){
+
+  .hero-grid{
+    gap:50px;
+  }
+
+  .hero-text h1{
+    font-size:72px;
+  }
+
+  .section-heading h2,
+  .leadership h2,
+  .future-vision h2,
+  .mission-box h2{
+    font-size:50px;
+  }
+
+}
+
+/* ======================================== */
+/* TABLETS */
+/* ======================================== */
+
+@media (max-width: 980px){
+
+  header{
+    padding:18px 24px;
+  }
+
+  nav{
+    gap:18px;
+  }
+
+  .hero{
+
+    padding:
+      140px 24px
+      80px;
+  }
+
+  .hero-grid{
+
+    grid-template-columns:1fr;
+
+    gap:60px;
+  }
+
+  .hero-text{
+    text-align:center;
+  }
+
+  .hero-text p{
+    margin:auto;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+  }
+
+  .hero-text h1{
+    font-size:64px;
+  }
+
+  .hero-image{
+    max-width:650px;
+    margin:auto;
+  }
+
+  .section{
+    padding:90px 22px;
+  }
+
+  .section-heading{
+    margin-bottom:55px;
+  }
+
+  .section-heading h2{
+    font-size:46px;
+  }
+
+  .identity-card,
+  .leadership,
+  .future-vision,
+  .mission-box{
+
+    padding:55px 36px;
+  }
+
+  .footer-container{
+    grid-template-columns:1fr;
+    gap:55px;
+  }
+
+  .footer-left h2{
+    font-size:44px;
+  }
+
+}
+
+/* ======================================== */
+/* MOBILE */
+/* ======================================== */
+
+@media (max-width: 768px){
+
+  header{
+
+    padding:
+      16px 18px;
+  }
+
+  .logo{
+    font-size:16px;
+  }
+
+  nav{
+    display:none;
+  }
+
+  .hero{
+
+    min-height:auto;
+
+    padding:
+      130px 18px
+      70px;
+  }
+
+  .hero-grid{
+    gap:40px;
+  }
+
+  .hero-text h1{
+
+    font-size:50px;
+
+    line-height:0.95;
+
+    letter-spacing:-2px;
+  }
+
+  .hero-text p{
+
+    font-size:15px;
+
+    line-height:1.9;
+  }
+
+  .hero-buttons{
+
+    flex-direction:column;
+
+    width:100%;
+  }
+
+  .hero-buttons a{
+
+    width:100%;
+
+    text-align:center;
+  }
+
+  .image-card{
+    border-radius:28px;
+  }
+
+  .quote-back{
+
+    font-size:24px;
+
+    padding:24px;
+  }
+
+  .section{
+
+    padding:
+      80px 18px;
+  }
+
+  .section-heading h2,
+  .leadership h2,
+  .future-vision h2,
+  .mission-box h2{
+
+    font-size:36px;
+
+    letter-spacing:-1px;
+  }
+
+  .section-heading p{
+    font-size:15px;
+  }
+
+  .identity-card,
+  .leadership,
+  .future-vision,
+  .mission-box{
+
+    padding:38px 24px;
+
+    border-radius:28px;
+  }
+
+  .identity-card p,
+  .leadership p,
+  .future-vision p,
+  .mission-box p{
+
+    font-size:15px;
+
+    line-height:1.9;
+  }
+
+  .metrics{
+    gap:16px;
+  }
+
+  .metric{
+
+    padding:26px;
+  }
+
+  .metric h3{
+    font-size:42px;
+  }
+
+  .ecosystem,
+  .research-grid,
+  .expertise-grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .eco-card,
+  .research-card{
+
+    padding:28px;
+  }
+
+  .eco-card h3,
+  .research-card h3{
+
+    font-size:24px;
+  }
+
+  .gallery{
+    gap:14px;
+  }
+
+  .gallery img{
+
+    height:260px;
+
+    border-radius:22px;
+  }
+
+  .fame-timeline{
+
+    padding-left:24px;
+  }
+
+  .fame-item::before{
+
+    left:-31px;
+  }
+
+  .fame-card{
+
+    padding:26px;
+  }
+
+  .fame-card h3{
+
+    font-size:22px;
+  }
+
+  .status-row{
+
+    grid-template-columns:1fr;
+
+    gap:14px;
+
+    padding:24px;
+  }
+
+  .status-project{
+    font-size:20px;
+  }
+
+  .future-vision,
+  .mission-box{
+
+    padding:50px 26px;
+  }
+
+  .footer-container{
+
+    padding:
+      0 20px
+      55px;
+  }
+
+  .footer-left h2{
+
+    font-size:38px;
+  }
+
+  .footer-left p{
+
+    font-size:15px;
+  }
+
+  .social-row{
+    flex-wrap:wrap;
+  }
+
+}
+
+/* ======================================== */
+/* SMALL MOBILE */
+/* ======================================== */
+
+@media (max-width: 480px){
+
+  .hero-text h1{
+
+    font-size:40px;
+  }
+
+  .section-heading h2,
+  .leadership h2,
+  .future-vision h2,
+  .mission-box h2{
+
+    font-size:30px;
+  }
+
+  .metric h3{
+    font-size:36px;
+  }
+
+  .gallery img{
+
+    height:220px;
+  }
+
+  .footer-left h2{
+    font-size:32px;
+  }
+
+  .social-icon{
+
+    width:50px;
+    height:50px;
+  }
+
+}
+
+/* ======================================== */
+/* ULTRA SMALL DEVICES */
+/* ======================================== */
+
+@media (max-width: 360px){
+
+  .hero-text h1{
+    font-size:34px;
+  }
+
+  .section-heading h2{
+    font-size:26px;
+  }
+
+  .hero-buttons a{
+
+    padding:13px 18px;
+
+    font-size:13px;
+  }
+
+  .identity-card,
+  .leadership,
+  .future-vision,
+  .mission-box{
+
+    padding:28px 18px;
+  }
+
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+
+
+<!-- ===================================== -->
+<!-- PRELOADER -->
+<!-- PUT THIS RIGHT AFTER <body> -->
+<!-- ===================================== -->
+
+<div id="preloader">
+
+  <!-- BG GLOW -->
+ <!-- VIDEO BG -->
+
+<video class="loader-video"
+  autoplay
+  muted
+  loop
+  playsinline>
+
+  <source src="bg.mp4" type="video/mp4">
+
+</video>
+
+<!-- DARK OVERLAY -->
+
+<div class="video-overlay"></div>
+
+  <!-- PARTICLES -->
+  <div class="particles"></div>
+
+  <!-- CENTER -->
+  <div class="loader-content">
+
+    <!-- ROTATING RINGS -->
+    <div class="ring ring1"></div>
+    <div class="ring ring2"></div>
+    <div class="ring ring3"></div>
+
+    <!-- LOGO -->
+    <div class="loader-logo">
+
+      <img src="FILO.png" alt="FILO Logo">
+
+    </div>
+
+    <!-- TEXT -->
+
+    <h1 class="loader-title">
+      FILO
+    </h1>
+
+    <p class="loader-subtitle">
+      Finance • Intelligence • Logic • Optimization
+    </p>
+
+    <!-- LOADING BAR -->
+
+    <div class="loading-line">
+
+      <span></span>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ===================================== -->
+<!-- PRELOADER CSS -->
+<!-- PUT IN YOUR CSS FILE -->
+<!-- ===================================== -->
+
+<style>
+
+/* ===================================== */
+/* PRELOADER */
+/* ===================================== */
+
+#preloader{
+
+  position:fixed;
+
+  inset:0;
+
+  width:100%;
+  height:100vh;
+
+  background:#050505;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+  z-index:999999;
+
+  transition:
+    opacity 1s ease,
+    visibility 1s ease;
+}
+
+/* HIDE */
+
+#preloader.hide{
+
+  opacity:0;
+  visibility:hidden;
+}
+
+/* ===================================== */
+/* BG GLOW */
+/* ===================================== */
+
+.loader-bg{
+
+  position:absolute;
+
+  width:900px;
+  height:900px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.06),
+      transparent 70%
+    );
+
+  animation:
+    pulseGlow 5s infinite ease-in-out;
+}
+
+@keyframes pulseGlow{
+
+  0%{
+    transform:scale(1);
+    opacity:0.5;
+  }
+
+  50%{
+    transform:scale(1.15);
+    opacity:1;
+  }
+
+  100%{
+    transform:scale(1);
+    opacity:0.5;
+  }
+
+}
+
+/* ===================================== */
+/* CONTENT */
+/* ===================================== */
+
+.loader-content{
+
+  position:relative;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+  justify-content:center;
+
+  z-index:5;
+}
+
+/* ===================================== */
+/* LOGO */
+/* ===================================== */
+
+.loader-logo{
+
+  width:150px;
+  height:150px;
+
+  border-radius:50%;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  position:relative;
+
+  z-index:5;
+
+  animation:
+    floatLogo 4s ease-in-out infinite;
+}
+
+.loader-logo img{
+
+  width:110px;
+
+  object-fit:contain;
+
+  filter:
+    drop-shadow(0 0 35px rgba(255,255,255,0.25));
+}
+
+@keyframes floatLogo{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-12px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+/* ===================================== */
+/* RINGS */
+/* ===================================== */
+
+.ring{
+
+  position:absolute;
+
+  border-radius:50%;
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+}
+
+.ring1{
+
+  width:220px;
+  height:220px;
+
+  animation:
+    rotateRing 10s linear infinite;
+}
+
+.ring2{
+
+  width:320px;
+  height:320px;
+
+  animation:
+    rotateRingReverse 16s linear infinite;
+}
+
+.ring3{
+
+  width:420px;
+  height:420px;
+
+  animation:
+    rotateRing 24s linear infinite;
+}
+
+@keyframes rotateRing{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+
+}
+
+@keyframes rotateRingReverse{
+
+  from{
+    transform:rotate(360deg);
+  }
+
+  to{
+    transform:rotate(0deg);
+  }
+
+}
+
+/* ===================================== */
+/* TITLE */
+/* ===================================== */
+
+.loader-title{
+
+  margin-top:35px;
+
+  font-size:74px;
+
+  letter-spacing:-4px;
+
+  color:#fff;
+
+  font-weight:700;
+
+  animation:
+    fadeSlide 1.4s ease;
+}
+
+.loader-subtitle{
+
+  margin-top:8px;
+
+  color:
+    rgba(255,255,255,0.6);
+
+  letter-spacing:3px;
+
+  text-transform:uppercase;
+
+  font-size:11px;
+
+  animation:
+    fadeSlide 1.8s ease;
+}
+
+@keyframes fadeSlide{
+
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0px);
+  }
+
+}
+
+/* ===================================== */
+/* LOADING LINE */
+/* ===================================== */
+
+.loading-line{
+
+  width:240px;
+  height:2px;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  margin-top:35px;
+
+  overflow:hidden;
+
+  border-radius:999px;
+}
+
+.loading-line span{
+
+  display:block;
+
+  width:0%;
+
+  height:100%;
+
+  background:#fff;
+
+  animation:
+    loadBar 3.5s ease forwards;
+}
+
+@keyframes loadBar{
+
+  from{
+    width:0%;
+  }
+
+  to{
+    width:100%;
+  }
+
+}
+
+/* ===================================== */
+/* PARTICLES */
+/* ===================================== */
+
+.particles::before,
+.particles::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:6px;
+  height:6px;
+
+  border-radius:50%;
+
+  background:#fff;
+
+  opacity:0.2;
+
+  box-shadow:
+    200px 120px #fff,
+    -220px 180px #fff,
+    300px -120px #fff,
+    -320px -160px #fff,
+    120px -260px #fff,
+    -100px 260px #fff;
+
+  animation:
+    floatParticles 12s linear infinite;
+}
+
+@keyframes floatParticles{
+
+  from{
+    transform:translateY(0px);
+  }
+
+  to{
+    transform:translateY(-80px);
+  }
+
+}
+
+/* ===================================== */
+/* MOBILE */
+/* ===================================== */
+
+@media(max-width:768px){
+
+  .loader-title{
+    font-size:48px;
+  }
+
+  .loader-logo{
+
+    width:120px;
+    height:120px;
+  }
+
+  .loader-logo img{
+    width:85px;
+  }
+
+  .ring1{
+    width:180px;
+    height:180px;
+  }
+
+  .ring2{
+    width:250px;
+    height:250px;
+  }
+
+  .ring3{
+    width:320px;
+    height:320px;
+  }
+
+  .loading-line{
+    width:180px;
+  }
+
+}
+
+/* ===================================== */
+/* VIDEO BG */
+/* ===================================== */
+
+.loader-video{
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  z-index:1;
+
+  opacity:0.28;
+
+  filter:
+    grayscale(100%)
+    contrast(120%)
+    brightness(0.55);
+}
+
+/* ===================================== */
+/* OVERLAY */
+/* ===================================== */
+
+.video-overlay{
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(0,0,0,0.15),
+      rgba(0,0,0,0.85)
+    );
+
+  z-index:2;
+}
+
+</style>
+
+
+
+
+
+<!-- ========================= -->
+<!-- HEADER -->
+<!-- ========================= -->
+
+<header>
+
+  <div class="logo">
+    Naren Hullatti
+  </div>
+
+  <nav>
+
+    <a href="#about">About</a>
+    <a href="#ecosystem">Ecosystem</a>
+    <a href="#fame">Achievements</a>
+    <a href="#vision">Vision</a>
+    <a href="#connect">Connect</a>
+
+  </nav>
+
+</header>
+
+<!-- ========================= -->
+<!-- HERO -->
+<!-- ========================= -->
+
+<section class="hero">
+
+  <div class="hero-grid">
+
+    <div class="hero-text" data-aos="fade-up">
+
+      <h1>
+        Founder.<br>
+        Researcher.<br>
+        Systems Thinker.
+      </h1>
+
+      <p>
+        Building interconnected ecosystems across finance,
+        intelligence, research, diplomacy, innovation,
+        and digital infrastructure.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#ecosystem"
+          class="primary-btn">
+          Explore Ecosystem
+        </a>
+
+        <a href="https://getfilo.github.io/filo"
+          class="secondary-btn">
+          Back to FILO
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="hero-image"
+      data-aos="fade-left">
+
+      <div class="image-card">
+
+        <img src="naren.png">
+
+        <div class="quote-back">
+
+          “Never leave what you dream.”<br>
+          — Naren
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- ABOUT -->
+<!-- ========================= -->
+
+<section class="section" id="about">
+
+  <div class="section-heading"
+    data-aos="fade-up">
+
+    <span class="mini-tag">
+      Core Identity
+    </span>
+
+    <h2>
+      Innovation Through Systems Thinking
+    </h2>
+
+  </div>
+
+  <div class="identity-card"
+    data-aos="fade-up">
+
+    <p>
+
+      Naren Hullatti represents a new generation of builders who blend technology, research thinking, and global awareness into one unified vision. At the center of his identity is a strong belief that innovation is not just about creating products, but about designing systems that solve real-world problems at scale.
+
+      <br><br>
+
+      From an early stage, Naren developed a deep interest in how technology, economics, and scientific systems interact with each other. This curiosity evolved into a mission: to build interconnected platforms that improve how people think, learn, collaborate, and create value.
+
+      <br><br>
+
+      A defining trait of Naren’s identity is his systems-oriented thinking. He does not view ideas in isolation; instead, he builds ecosystems where each component supports the other. Whether it is financial intelligence tools or research collaboration platforms, his focus remains on scalability, usability, and long-term impact.
+
+      <br><br>
+
+      Beyond technical thinking, Naren carries a strong leadership mindset. He believes leadership is not about authority, but about responsibility, vision alignment, and consistent execution.
+
+    </p>
+
+  </div>
+
+  <!-- Metrics -->
+
+  <div class="metrics">
+
+    <div class="metric" data-aos="fade-up">
+      <h3>6+</h3>
+      <p>Founder Ventures</p>
+    </div>
+
+    <div class="metric" data-aos="fade-up">
+      <h3>12+</h3>
+      <p>Major Achievements</p>
+    </div>
+
+    <div class="metric" data-aos="fade-up">
+      <h3>3x</h3>
+      <p>Student Council President</p>
+    </div>
+
+    <div class="metric" data-aos="fade-up">
+      <h3>₹8Cr</h3>
+      <p>Future Investment Interest</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- ECOSYSTEM -->
+<!-- ========================= -->
+
+<section class="section"
+  id="ecosystem">
+
+  <div class="section-heading"
+    data-aos="fade-up">
+
+    <span class="mini-tag">
+      Founder Ecosystem
+    </span>
+
+    <h2>
+      Interconnected Innovation Portfolio
+    </h2>
+
+    <p>
+      A collection of ventures built around research,
+      finance, intelligence, open knowledge,
+      and scalable digital systems.
+    </p>
+
+  </div>
+
+  <div class="ecosystem">
+
+    <div class="eco-card"
+      data-aos="fade-up">
+
+      <h3>STEM Globe</h3>
+
+      <p>
+        Global innovation startup focused on interdisciplinary technology,
+        scientific collaboration, AI innovation,
+        and research-driven systems.
+      </p>
+
+    </div>
+
+    <div class="eco-card"
+      data-aos="fade-up">
+
+      <h3>FILO</h3>
+
+      <p>
+        Financial intelligence ecosystem focused on structured analytics,
+        cash flow understanding,
+        and interactive financial systems.
+      </p>
+
+    </div>
+
+    <div class="eco-card"
+      data-aos="fade-up">
+
+      <h3>ARIS</h3>
+
+      <p>
+        Analyzing and Reasoning Intelligent System
+        designed for advanced reasoning,
+        structured analysis,
+        and decision support.
+      </p>
+
+    </div>
+
+    <div class="eco-card"
+      data-aos="fade-up">
+
+      <h3>SGRCI</h3>
+
+      <p>
+        STEM Globe Research and Collaboration Initiative
+        enabling collaborative research,
+        idea validation,
+        and scientific knowledge exchange.
+      </p>
+
+    </div>
+
+    <div class="eco-card"
+      data-aos="fade-up">
+
+      <h3>NEXORA</h3>
+
+      <p>
+        Open-access platform for articles,
+        source code sharing,
+        and transparent technical collaboration.
+      </p>
+
+    </div>
+
+    <div class="eco-card"
+      data-aos="fade-up">
+
+      <h3>PixelWeb</h3>
+
+      <p>
+        Modern web development studio focused on premium UI/UX,
+        scalable architecture,
+        and refined digital experiences.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- RESEARCH & PUBLICATIONS SECTION -->
+<!-- ADD BELOW ECOSYSTEM SECTION -->
+<!-- ===================================================== -->
+
+<section class="section" id="research">
+
+  <div class="section-heading" data-aos="fade-up">
+
+    <span class="mini-tag">
+      Research & Publications
+    </span>
+
+    <h2>
+      Research Driven Innovation
+    </h2>
+
+    <p>
+      Exploring intelligent systems, financial architectures,
+      collaborative ecosystems, and future-focused technologies
+      through structured research and innovation frameworks.
+    </p>
+
+  </div>
+
+  <div class="research-grid">
+
+    <!-- CARD -->
+
+    <div class="research-card" data-aos="fade-up">
+
+      <div class="research-type">
+        Research Architecture
+      </div>
+
+      <h3>
+        ARIS Cognitive Intelligence Framework
+      </h3>
+
+      <p>
+        A structured reasoning architecture focused on
+        analytical intelligence, pattern understanding,
+        and advanced system-based decision support.
+      </p>
+
+      <span class="research-status">
+        In Development
+      </span>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="research-card" data-aos="fade-up">
+
+      <div class="research-type">
+        Financial Systems
+      </div>
+
+      <h3>
+        FILO Financial Intelligence Layer
+      </h3>
+
+      <p>
+        Researching intelligent finance systems that simplify
+        tracking, cashflow analysis, prediction,
+        and financial interpretation through scalable architecture.
+      </p>
+
+      <span class="research-status">
+        Active Research
+      </span>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="research-card" data-aos="fade-up">
+
+      <div class="research-type">
+        Innovation Theory
+      </div>
+
+      <h3>
+        Interconnected Ecosystem Design
+      </h3>
+
+      <p>
+        A systems-thinking model focused on building
+        interconnected innovation ecosystems where research,
+        finance, intelligence, and collaboration coexist.
+      </p>
+
+      <span class="research-status">
+        Conceptual Framework
+      </span>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="research-card" data-aos="fade-up">
+
+      <div class="research-type">
+        Open Research
+      </div>
+
+      <h3>
+        NEXORA Open Knowledge System
+      </h3>
+
+      <p>
+        Building an open-access infrastructure for articles,
+        source codes, collaborative innovation,
+        and transparent technical learning systems.
+      </p>
+
+      <span class="research-status">
+        Infrastructure Planning
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- CURRENT MISSION SECTION -->
+<!-- ADD BELOW LEADERSHIP SECTION -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+  <div class="mission-box" data-aos="fade-up">
+
+    <div class="mission-glow"></div>
+
+    <span class="mini-tag">
+      Current Mission
+    </span>
+
+    <h2>
+      Building Intelligent Ecosystems
+      That Connect Finance, Research,
+      Technology, and Human Collaboration.
+    </h2>
+
+    <p>
+
+      The current mission is focused on creating scalable systems
+      that simplify complex processes across financial intelligence,
+      collaborative research, intelligent reasoning,
+      and digital innovation.
+
+      <br><br>
+
+      Rather than building isolated platforms,
+      the goal is to design interconnected ecosystems
+      where each layer contributes toward a larger architecture
+      of global innovation and meaningful impact.
+
+      <br><br>
+
+      Through ventures like FILO, STEM Globe,
+      ARIS, SGRCI, NEXORA, and PixelWeb,
+      the vision is to shape future-ready systems
+      that merge usability, intelligence,
+      scalability, and interdisciplinary thinking.
+
+    </p>
+
+  </div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- AREAS OF EXPERTISE SECTION -->
+<!-- ADD BELOW GALLERY SECTION -->
+<!-- ===================================================== -->
+
+<section class="section" id="expertise">
+
+  <div class="section-heading" data-aos="fade-up">
+
+    <span class="mini-tag">
+      Expertise
+    </span>
+
+    <h2>
+      Areas of Expertise
+    </h2>
+
+    <p>
+      Combining innovation, systems thinking,
+      research mindset, and execution-focused leadership
+      across multiple domains.
+    </p>
+
+  </div>
+
+  <div class="expertise-grid">
+
+    <div class="expertise-card" data-aos="fade-up">
+      Systems Thinking
+    </div>
+
+    <div class="expertise-card" data-aos="fade-up">
+      Financial Intelligence
+    </div>
+
+    <div class="expertise-card" data-aos="fade-up">
+      AI & Intelligent Systems
+    </div>
+
+    <div class="expertise-card" data-aos="fade-up">
+      Startup Ecosystems
+    </div>
+
+    <div class="expertise-card" data-aos="fade-up">
+      Research Collaboration
+    </div>
+
+    <div class="expertise-card" data-aos="fade-up">
+      Innovation Architecture
+    </div>
+
+    <div class="expertise-card" data-aos="fade-up">
+      UI/UX Systems
+    </div>
+
+    <div class="expertise-card" data-aos="fade-up">
+      Strategic Leadership
+    </div>
+
+    <div class="expertise-card" data-aos="fade-up">
+      Diplomacy & Communication
+    </div>
+
+    <div class="expertise-card" data-aos="fade-up">
+      Product Thinking
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- LIVE PROJECT STATUS SECTION -->
+<!-- ADD BELOW WALL OF FAME -->
+<!-- ===================================================== -->
+
+<section class="section" id="status">
+
+  <div class="section-heading" data-aos="fade-up">
+
+    <span class="mini-tag">
+      Live Status
+    </span>
+
+    <h2>
+      Ecosystem Project Status
+    </h2>
+
+    <p>
+      Active progress and development phases
+      across the innovation ecosystem.
+    </p>
+
+  </div>
+
+  <div class="status-table" data-aos="fade-up">
+
+    <!-- ROW -->
+
+    <div class="status-row">
+
+      <div class="status-project">
+        STEM Globe
+      </div>
+
+      <div class="status-desc">
+        Global Innovation Ecosystem
+      </div>
+
+      <div class="status-badge active">
+        Active Development
+      </div>
+
+    </div>
+
+    <!-- ROW -->
+
+    <div class="status-row">
+
+      <div class="status-project">
+        FILO
+      </div>
+
+      <div class="status-desc">
+        Financial Intelligence Platform
+      </div>
+
+      <div class="status-badge active">
+        MVP Active
+      </div>
+
+    </div>
+
+    <!-- ROW -->
+
+    <div class="status-row">
+
+      <div class="status-project">
+        ARIS
+      </div>
+
+      <div class="status-desc">
+        Reasoning Intelligence System
+      </div>
+
+      <div class="status-badge planning">
+        Research Phase
+      </div>
+
+    </div>
+
+    <!-- ROW -->
+
+    <div class="status-row">
+
+      <div class="status-project">
+        SGRCI
+      </div>
+
+      <div class="status-desc">
+        Research Collaboration Initiative
+      </div>
+
+      <div class="status-badge active">
+        Expansion Stage
+      </div>
+
+    </div>
+
+    <!-- ROW -->
+
+    <div class="status-row">
+
+      <div class="status-project">
+        NEXORA
+      </div>
+
+      <div class="status-desc">
+        Open Knowledge Infrastructure
+      </div>
+
+      <div class="status-badge planning">
+        Infrastructure Design
+      </div>
+
+    </div>
+
+    <!-- ROW -->
+
+    <div class="status-row">
+
+      <div class="status-project">
+        PixelWeb
+      </div>
+
+      <div class="status-desc">
+        Digital Design Studio
+      </div>
+
+      <div class="status-badge active">
+        Operational
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- FUTURE VISION SECTION -->
+<!-- ADD ABOVE FOOTER -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+  <div class="future-vision" data-aos="fade-up">
+
+    <div class="vision-orb"></div>
+
+    <span class="mini-tag">
+      Future Vision
+    </span>
+
+    <h2>
+      The Future Belongs to
+      Interconnected Intelligence Systems.
+    </h2>
+
+    <p>
+
+      The long-term vision is to contribute toward a future
+      where finance, research, AI systems,
+      innovation platforms, and global collaboration
+      operate as interconnected ecosystems rather than isolated technologies.
+
+      <br><br>
+
+      The focus is not only on building startups,
+      but on designing scalable architectures
+      capable of enabling future generations
+      to collaborate, innovate, and solve global challenges more effectively.
+
+      <br><br>
+
+      By combining systems thinking,
+      interdisciplinary innovation,
+      and intelligent infrastructure,
+      the mission is to shape technology
+      that creates meaningful real-world impact at scale.
+
+    </p>
+
+  </div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- CSS -->
+<!-- ADD THIS BELOW YOUR EXISTING CSS -->
+<!-- ===================================================== -->
+
+<style>
+
+/* ========================= */
+/* RESEARCH */
+/* ========================= */
+
+.research-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+  gap:24px;
+}
+
+.research-card{
+
+  border:1px solid #eee;
+
+  border-radius:32px;
+
+  padding:36px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff,
+      #fafafa
+    );
+
+  transition:0.35s ease;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.research-card:hover{
+
+  transform:translateY(-8px);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.06);
+}
+
+.research-type{
+
+  display:inline-block;
+
+  padding:7px 14px;
+
+  border-radius:999px;
+
+  background:#111;
+
+  color:#fff;
+
+  font-size:11px;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+
+  margin-bottom:18px;
+}
+
+.research-card h3{
+
+  font-size:28px;
+
+  margin-bottom:16px;
+
+  letter-spacing:-1px;
+}
+
+.research-card p{
+
+  color:#555;
+
+  line-height:1.9;
+}
+
+.research-status{
+
+  display:inline-block;
+
+  margin-top:24px;
+
+  font-size:13px;
+
+  color:#888;
+}
+
+/* ========================= */
+/* MISSION */
+/* ========================= */
+
+.mission-box{
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:42px;
+
+  padding:90px 70px;
+
+  background:#111;
+
+  color:#fff;
+}
+
+.mission-glow{
+
+  position:absolute;
+
+  width:500px;
+  height:500px;
+
+  top:-220px;
+  right:-220px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.08),
+      transparent 70%
+    );
+}
+
+.mission-box h2{
+
+  position:relative;
+
+  z-index:2;
+
+  font-size:62px;
+
+  line-height:1.08;
+
+  letter-spacing:-2px;
+
+  margin-bottom:26px;
+
+  max-width:900px;
+}
+
+.mission-box p{
+
+  position:relative;
+
+  z-index:2;
+
+  max-width:920px;
+
+  color:
+    rgba(255,255,255,0.76);
+
+  line-height:2;
+}
+
+/* ========================= */
+/* EXPERTISE */
+/* ========================= */
+
+.expertise-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+  gap:20px;
+}
+
+.expertise-card{
+
+  border:1px solid #eee;
+
+  border-radius:24px;
+
+  padding:28px;
+
+  font-size:18px;
+
+  transition:0.35s ease;
+
+  background:#fff;
+}
+
+.expertise-card:hover{
+
+  background:#111;
+
+  color:#fff;
+
+  transform:translateY(-6px);
+}
+
+/* ========================= */
+/* STATUS */
+/* ========================= */
+
+.status-table{
+
+  border:1px solid #eee;
+
+  border-radius:32px;
+
+  overflow:hidden;
+}
+
+.status-row{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1.2fr auto;
+
+  gap:20px;
+
+  align-items:center;
+
+  padding:26px 30px;
+
+  border-bottom:1px solid #eee;
+}
+
+.status-row:last-child{
+  border-bottom:none;
+}
+
+.status-project{
+
+  font-size:22px;
+
+  font-weight:600;
+}
+
+.status-desc{
+  color:#555;
+}
+
+.status-badge{
+
+  padding:10px 18px;
+
+  border-radius:999px;
+
+  font-size:13px;
+}
+
+.active{
+
+  background:#111;
+
+  color:#fff;
+}
+
+.planning{
+
+  background:#f2f2f2;
+
+  color:#111;
+}
+
+/* ========================= */
+/* FUTURE VISION */
+/* ========================= */
+
+.future-vision{
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:42px;
+
+  padding:100px 70px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #111,
+      #1d1d1d
+    );
+
+  color:#fff;
+}
+
+.vision-orb{
+
+  position:absolute;
+
+  width:600px;
+  height:600px;
+
+  right:-260px;
+  top:-260px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.08),
+      transparent 70%
+    );
+}
+
+.future-vision h2{
+
+  position:relative;
+
+  z-index:2;
+
+  font-size:64px;
+
+  line-height:1.08;
+
+  letter-spacing:-2px;
+
+  margin-bottom:28px;
+
+  max-width:950px;
+}
+
+.future-vision p{
+
+  position:relative;
+
+  z-index:2;
+
+  max-width:920px;
+
+  color:
+    rgba(255,255,255,0.76);
+
+  line-height:2;
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media(max-width:900px){
+
+  .mission-box,
+  .future-vision{
+    padding:50px 28px;
+  }
+
+  .mission-box h2,
+  .future-vision h2{
+    font-size:40px;
+  }
+
+  .status-row{
+
+    grid-template-columns:1fr;
+
+    gap:14px;
+  }
+
+}
+
+</style>
+
+
+<!-- ========================= -->
+<!-- LEADERSHIP -->
+<!-- ========================= -->
+
+<section class="section">
+
+  <div class="leadership"
+    data-aos="fade-up">
+
+    <div class="leadership-content">
+
+      <div class="leadership-badge">
+        Student Leadership
+      </div>
+
+      <h2>
+        Leading Beyond Titles
+      </h2>
+
+      <p>
+
+        Naren Hullatti served as the President of Student Council at
+        Edu ASIA International Residential CBSE School, Karur
+        for three consecutive years.
+
+        <br><br>
+
+        His leadership became known for discipline,
+        communication quality,
+        execution mindset,
+        and active contribution toward the school community.
+
+        <br><br>
+
+        This role reflected his ability to combine leadership,
+        diplomacy,
+        management,
+        and systems thinking in real-world environments.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- GALLERY -->
+<!-- ========================= -->
+
+<section class="section">
+
+  <div class="section-heading"
+    data-aos="fade-up">
+
+    <span class="mini-tag">
+      Gallery
+    </span>
+
+    <h2>
+      Moments & Milestones
+    </h2>
+
+  </div>
+
+  <div class="gallery">
+
+    <img src="1.jpg">
+    <img src="2.jpg">
+    <img src="3.jpg">
+
+  </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- WALL OF FAME -->
+<!-- ========================= -->
+
+<section class="section"
+  id="fame">
+
+  <div class="section-heading"
+    data-aos="fade-up">
+
+    <span class="mini-tag">
+      Wall of Fame
+    </span>
+
+    <h2>
+      Achievements & Recognition
+    </h2>
+
+  </div>
+
+  <div class="fame-timeline">
+
+    <div class="fame-item">
+
+      <div class="fame-year">
+        2022
+      </div>
+
+      <div class="fame-card">
+
+        <h3>
+          AVISHKAR SCIENCE FEAST — 1st Place
+        </h3>
+
+        <p>
+          His ATL innovation journey officially began with this victory.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="fame-item">
+
+      <div class="fame-year">
+        2022
+      </div>
+
+      <div class="fame-card">
+
+        <h3>
+          ATL Marathon Finalist ×2 Projects
+        </h3>
+
+        <p>
+          Became finalist with two different innovation projects.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="fame-item">
+
+      <div class="fame-year">
+        2023
+      </div>
+
+      <div class="fame-card">
+
+        <h3>
+          SAMBHRAM 2K23 — 1st Place
+        </h3>
+
+        <p>
+          Received appreciation from government authorities
+          and regional leaders.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="fame-item">
+
+      <div class="fame-year">
+        2024
+      </div>
+
+      <div class="fame-card">
+
+        <h3>
+          INSPIRE Award Recognition
+        </h3>
+
+        <p>
+          Recognized for scientific innovation
+          and problem-solving excellence.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="fame-item">
+
+      <div class="fame-year">
+        2024
+      </div>
+
+      <div class="fame-card">
+
+        <h3>
+          Best Diplomate Award — DMUN
+        </h3>
+
+        <p>
+          Appreciated for diplomatic reasoning,
+          leadership,
+          and communication skills.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="fame-item">
+
+      <div class="fame-year">
+        2025
+      </div>
+
+      <div class="fame-card">
+
+        <h3>
+          Young Scientist Award
+        </h3>
+
+        <p>
+          Received from Edu ASIA International Residential School.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="fame-item">
+
+      <div class="fame-year">
+        2025
+      </div>
+
+      <div class="fame-card">
+
+        <h3>
+          IIT Bombay E-Summit Finalist
+        </h3>
+
+        <p>
+          Secured future investment interest worth approximately ₹8Cr.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="fame-item">
+
+      <div class="fame-year">
+        2025
+      </div>
+
+      <div class="fame-card">
+
+        <h3>
+          WRO Semi-Finalist
+        </h3>
+
+        <p>
+          Showcased robotics and engineering innovation capabilities.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="fame-item">
+
+      <div class="fame-year">
+        2026
+      </div>
+
+      <div class="fame-card">
+
+        <h3>
+          Innovation & Entrepreneurship Award
+        </h3>
+
+        <p>
+          Awarded by Edu ASIA Group of Institutions.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- VISION -->
+<!-- ========================= -->
+
+<section class="section"
+  id="vision">
+
+  <div class="vision"
+    data-aos="fade-up">
+
+    <h2>
+      Building intelligent ecosystems connecting
+      finance, research, technology,
+      and innovation.
+    </h2>
+
+    <p>
+
+      The long-term vision is to design globally scalable systems
+      that improve collaboration,
+      intelligence,
+      scientific research,
+      and digital infrastructure for future innovation ecosystems.
+
+      <br><br>
+
+      Every venture inside the ecosystem is designed to contribute toward
+      a larger interconnected architecture
+      focused on meaningful impact and real-world scalability.
+
+    </p>
+
+  </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- PREMIUM FOOTER -->
+<!-- REPLACE OLD FOOTER -->
+<!-- ========================= -->
+
+<footer class="premium-footer" id="connect">
+
+  <!-- BG ORBS -->
+
+  <div class="footer-orb orb-1"></div>
+  <div class="footer-orb orb-2"></div>
+
+  <div class="footer-container">
+
+    <!-- LEFT -->
+
+    <div class="footer-left" data-aos="fade-up">
+
+      <span class="footer-tag">
+        Founder Portfolio
+      </span>
+
+      <h2>
+        Naren Hullatti
+      </h2>
+
+      <p>
+
+        Building interconnected ecosystems across
+        finance, research, intelligence,
+        innovation, and digital infrastructure.
+
+      </p>
+
+      <div class="footer-line"></div>
+
+      <div class="footer-mini-text">
+
+        “Never leave what you dream.”
+
+      </div>
+
+    </div>
+
+    <!-- CENTER -->
+
+    <div class="footer-links" data-aos="fade-up">
+
+      <h3>
+        Navigation
+      </h3>
+
+      <a href="#about">
+        About
+      </a>
+
+      <a href="#ecosystem">
+        Ecosystem
+      </a>
+
+      <a href="#research">
+        Research
+      </a>
+
+      <a href="#fame">
+        Wall of Fame
+      </a>
+
+      <a href="#vision">
+        Vision
+      </a>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="footer-contact" data-aos="fade-up">
+
+      <h3>
+        Connect
+      </h3>
+
+      <a href="mailto:narenhullatti.ceo.stemglobe@gmail.com"
+        class="contact-pill">
+
+        <span>
+          Email
+        </span>
+
+      </a>
+
+      <div class="social-row">
+
+        <!-- INSTAGRAM -->
+
+        <a href="https://instagram.com/naren.hullatti"
+          target="_blank"
+          class="social-icon">
+
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+
+        </a>
+
+        <!-- X -->
+
+        <a href="https://x.com/Naren_Hullatti"
+          target="_blank"
+          class="social-icon">
+
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968958.png">
+
+        </a>
+
+        <!-- LINKEDIN -->
+
+        <a href="https://www.linkedin.com/in/naren-hullatti-b68054387"
+          target="_blank"
+          class="social-icon">
+
+          <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png">
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+
+  <div class="footer-bottom">
+
+    <p>
+      © 2026 Naren Hullatti • Designed with Vision & Systems Thinking
+<br><br>
+              Developed By PixelWeb - Part of STEM Globe Ecosystem
+    </p>
+
+  </div>
+
+</footer>
+
+
+<!-- ========================= -->
+<!-- FOOTER CSS -->
+<!-- REPLACE OLD FOOTER CSS -->
+<!-- ========================= -->
+
+<style>
+
+.premium-footer{
+
+  position:relative;
+
+  overflow:hidden;
+
+  background:#0f0f0f;
+
+  color:#fff;
+
+  margin-top:120px;
+
+  padding-top:100px;
+}
+
+.footer-container{
+
+  max-width:1250px;
+
+  margin:auto;
+
+  padding:
+    0 30px
+    80px;
+
+  display:grid;
+
+  grid-template-columns:
+    1.2fr 0.8fr 1fr;
+
+  gap:70px;
+
+  position:relative;
+
+  z-index:2;
+}
+
+/* ========================= */
+/* ORBS */
+/* ========================= */
+
+.footer-orb{
+
+  position:absolute;
+
+  border-radius:50%;
+
+  filter:blur(10px);
+}
+
+.orb-1{
+
+  width:500px;
+  height:500px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.05),
+      transparent 70%
+    );
+
+  top:-250px;
+  right:-200px;
+}
+
+.orb-2{
+
+  width:400px;
+  height:400px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.04),
+      transparent 70%
+    );
+
+  bottom:-200px;
+  left:-180px;
+}
+
+/* ========================= */
+/* LEFT */
+/* ========================= */
+
+.footer-tag{
+
+  display:inline-block;
+
+  padding:8px 16px;
+
+  border-radius:999px;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  font-size:11px;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+
+  margin-bottom:20px;
+}
+
+.footer-left h2{
+
+  font-size:58px;
+
+  line-height:1;
+
+  letter-spacing:-3px;
+
+  margin-bottom:20px;
+}
+
+.footer-left p{
+
+  max-width:480px;
+
+  color:
+    rgba(255,255,255,0.68);
+
+  line-height:2;
+}
+
+.footer-line{
+
+  width:120px;
+  height:1px;
+
+  background:
+    rgba(255,255,255,0.15);
+
+  margin:
+    35px 0 25px;
+}
+
+.footer-mini-text{
+
+  font-size:18px;
+
+  color:
+    rgba(255,255,255,0.9);
+
+  letter-spacing:0.5px;
+}
+
+/* ========================= */
+/* LINKS */
+/* ========================= */
+
+.footer-links h3,
+.footer-contact h3{
+
+  font-size:16px;
+
+  margin-bottom:24px;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+}
+
+.footer-links{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:16px;
+}
+
+.footer-links a{
+
+  color:
+    rgba(255,255,255,0.65);
+
+  text-decoration:none;
+
+  transition:0.3s ease;
+
+  width:fit-content;
+}
+
+.footer-links a:hover{
+
+  color:#fff;
+
+  transform:translateX(4px);
+}
+
+/* ========================= */
+/* CONTACT */
+/* ========================= */
+
+.contact-pill{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding:
+    14px 22px;
+
+  border-radius:999px;
+
+  background:
+    rgba(255,255,255,0.06);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  color:#fff;
+
+  text-decoration:none;
+
+  margin-bottom:28px;
+
+  transition:0.35s ease;
+}
+
+.contact-pill:hover{
+
+  background:#fff;
+
+  color:#111;
+
+  transform:translateY(-4px);
+}
+
+.social-row{
+
+  display:flex;
+
+  gap:14px;
+}
+
+.social-icon{
+
+  width:56px;
+  height:56px;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,0.06);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  transition:0.35s ease;
+}
+
+.social-icon:hover{
+
+  transform:
+    translateY(-6px)
+    scale(1.05);
+
+  background:#fff;
+}
+
+.social-icon img{
+
+  width:22px;
+
+  transition:0.35s ease;
+}
+
+.social-icon:hover img{
+  filter:invert(1);
+}
+
+/* ========================= */
+/* BOTTOM */
+/* ========================= */
+
+.footer-bottom{
+
+  border-top:
+    1px solid rgba(255,255,255,0.08);
+
+  padding:
+    20px 25px;
+
+  text-align:center;
+
+  position:relative;
+
+  z-index:2;
+}
+
+.footer-bottom p{
+
+  color:
+    rgba(255,255,255,0.45);
+
+  font-size:13px;
+
+  letter-spacing:0.5px;
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media(max-width:900px){
+
+  .footer-container{
+
+    grid-template-columns:1fr;
+
+    gap:50px;
+  }
+
+  .footer-left h2{
+
+    font-size:42px;
+  }
+
+}
+
+</style>
+
+<!-- ========================= -->
+<!-- JS -->
+<!-- ========================= -->
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+AOS.init({
+
+  duration:1000,
+  once:true
+
+});
+
+</script>
+
+<!-- ===================================== -->
+<!-- PRELOADER JS -->
+<!-- PUT BEFORE </body> -->
+<!-- ===================================== -->
+
+<script>
+
+window.addEventListener("load",()=>{
+
+  const preloader =
+    document.getElementById("preloader");
+
+  setTimeout(()=>{
+
+    preloader.classList.add("hide");
+
+  },3500);
+
+});
+
+</script>
+
+</body>
+</html>
